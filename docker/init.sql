@@ -1,0 +1,2 @@
+--CREATE DATABASE alimentacaodb;
+--CREATE USER postgres WITH PASSWORD 'postgres';

@@ -1,0 +1,13 @@
+version: '3.2'
+
+services:
+  db:
+    image: postgres:latest
+    container_name: database-alimentacao
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: alimentacao-db
+    ports:
+      - "5432:5432"
