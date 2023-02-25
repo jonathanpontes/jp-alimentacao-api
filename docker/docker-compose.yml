@@ -2,12 +2,22 @@ version: '3.2'
 
 services:
   db:
-    image: postgres:latest
+    image: mysql:8.0.32
     container_name: database-alimentacao
     restart: always
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: alimentacao-db
+      MYSQL_USER: mysql
+      MYSQL_PASSWORD: mysql
+      MYSQL_ROOT_PASSWORD: mysql
+      MYSQL_DATABASE: alimentacao-db
     ports:
-      - "5432:5432"
+      - "3306:3306"
+    expose:
+      # Opens port 3306 on the container
+      - '3306'
+      # Where our data will be persisted
+    volumes:
+      - my-db:/var/lib/mysql
+    # Names our volume
+volumes:
+  my-db:
